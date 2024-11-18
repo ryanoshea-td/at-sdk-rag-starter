@@ -9,6 +9,11 @@ import { db } from "../db";
 import { generateEmbeddings } from "../ai/embedding";
 import { embeddings as embeddingsTable } from "../db/schema/embeddings";
 
+/**
+ * Create a new resource and embed it into the knowledge base.
+ * @param input - The content of the resource to be added.
+ * @returns A message indicating the success or failure of the operation.
+ */
 export const createResource = async (input: NewResourceParams) => {
   try {
     const { content } = insertResourceSchema.parse(input);
